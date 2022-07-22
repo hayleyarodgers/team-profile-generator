@@ -83,7 +83,7 @@ describe('Employee', () => {
 
         it("should throw an error if 'email' is in an invalid format", () => {
             // Arrange
-            const cb = () => new Employee("Dua Lipa",-1,"Dua Li[a");
+            const cb = () => new Employee("Dua Lipa",-1,"Dua Lipa");
             const err = new Error("Expected parameter 'email' to be in email format");
       
             // Assert
