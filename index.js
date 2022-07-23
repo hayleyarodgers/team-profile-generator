@@ -7,10 +7,12 @@ const profileCards = [];
 
 // Questions user is asked in CLI
 const welcome = () => {
-    console.log(`Welcome to the team generator!
-    Use \`npm run reset\` to reset the dist/ folder.
+    console.log(`
+
+Welcome to the team generator!
+Use \`npm run reset\` to reset the dist/ folder.
     
-    Please build your team.`);
+Please build your team.`);
 }
 
 const addManagerData = () => {
