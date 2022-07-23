@@ -44,7 +44,14 @@ const collectPeopleData = () => {
             },
         ])
         .then((answers) => {
-            const manager = new Manager(answers.name, parseInt(answers.id), answers.email, parseInt(answers.officeNumber));
+            const createManager = new Manager(answers.name, parseInt(answers.id), answers.email, parseInt(answers.officeNumber));
+            const manager = {
+                name: createManager.getName(),
+                role: createManager.getRole(),
+                id: createManager.getId(),
+                email: createManager.getEmail(),
+                officeNumber: createManager.getOfficeNumber(),
+            };
             profileCards.push(manager);
             decideAddMember();
         });
@@ -77,7 +84,14 @@ const collectPeopleData = () => {
             }
         ])
         .then((answers) => {
-            const engineer = new Engineer(answers.name, parseInt(answers.id), answers.email, answers.github);
+            const createEngineer = new Engineer(answers.name, parseInt(answers.id), answers.email, answers.github);
+            const engineer = {
+                name: createEngineer.getName(),
+                role: createEngineer.getRole(),
+                id: createEngineer.getId(),
+                email: createEngineer.getEmail(),
+                github: createEngineer.getGithub(),
+            };
             profileCards.push(engineer);
             decideAddMember();
         });
@@ -108,7 +122,14 @@ const collectPeopleData = () => {
             },
         ])
         .then((answers) => {
-            const intern = new Intern(answers.name, parseInt(answers.id), answers.email, answers.school);
+            const createIntern = new Intern(answers.name, parseInt(answers.id), answers.email, answers.school);
+            const intern = {
+                name: createIntern.getName(),
+                role: createIntern.getRole(),
+                id: createIntern.getId(),
+                email: createIntern.getEmail(),
+                school: createIntern.getSchool(),
+            };
             profileCards.push(intern);
             decideAddMember();
         });
@@ -142,9 +163,9 @@ const init = () => {
     welcome();
     collectPeopleData();
 
-    const htmlPageContent = generateHTML(profileCards);
+    // const htmlPageContent = generateHTML(profileCards);
 
-    console.log(htmlPageContent);
+    // console.log(htmlPageContent);
     // .then((profileCards) => fs.writeFileSync('./dist/index.html', generateHTML(profileCards)))
     // .then(() => console.log('Successfully created index.html!'))
     // .catch((err) => console.error(err));
