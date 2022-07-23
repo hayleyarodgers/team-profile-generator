@@ -1,7 +1,7 @@
 // Packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateHTML = require('./lib/generateHTML')
+const generateHTML = require('./lib/generateHTML');
 
 const profileCards = [];
 
