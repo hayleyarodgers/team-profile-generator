@@ -1,6 +1,9 @@
 // Packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
+const generateHTML = require('./lib/generateHTML')
+
+const profileCards = [];
 
 // Questions user is asked in CLI
 const welcome = () => {
@@ -11,7 +14,8 @@ const welcome = () => {
 }
 
 const addManagerData = () => {
-    return inquirer.prompt([
+    inquirer
+    .prompt([
         {
             type: 'input',
             name: 'name',
@@ -32,7 +36,9 @@ const addManagerData = () => {
             name: 'officeNumber',
             message: 'What is the team manager\'s office number?',
         },
-    ]);
+    ])
+    .then(profileCards.push(data))
+    .then(decideAddMember());
 }
 
 const decideAddMember = () => {
@@ -57,7 +63,8 @@ const decideAddMember = () => {
 }
 
 const addEngineerData = () => {
-    return inquirer.prompt([
+    inquirer
+    .prompt([
         {
             type: 'input',
             name: 'name',
@@ -73,11 +80,14 @@ const addEngineerData = () => {
             name: 'email',
             message: 'What is the engineer\'s GitHub username?',  
         },
-    ]);
+    ])
+    .then(profileCards.push(data))
+    .then(decideAddMember());
 }
 
 const addInternData = () => {
-    return inquirer.prompt([
+    inquirer
+    .prompt([
         {
             type: 'input',
             name: 'name',
@@ -93,15 +103,16 @@ const addInternData = () => {
             name: 'email',
             message: 'What is the intern\'s school?',  
         },
-    ]);
+    ])
+    .then(profileCards.push(data))
+    .then(decideAddMember());
 }
 
 // Initialize app
 const init = () => {
     welcome();
-    addManagerData();
-    decideAddMember()
-    .then((data) => fs.writeFileSync('./dist/index.html', generateHTML(data)))
+    addManagerData()
+    .then((profileCards) => fs.writeFileSync('./dist/index.html', generateHTML(profileCards)))
     .then(() => console.log('Successfully created index.html!'))
     .catch((err) => console.error(err));
 }
