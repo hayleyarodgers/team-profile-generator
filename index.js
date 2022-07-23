@@ -1,10 +1,10 @@
 // Packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const generateHTML = require('./lib/generateHTML');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const generateHTML = require('./lib/generateHTML');
 
 const profileCards = [];
 
@@ -151,24 +151,24 @@ const collectPeopleData = () => {
             } else if (answers.decision === 'Intern') {
                 addInternData();
             } else {
-                console.log(profileCards);
+                createHTMLFile(profileCards);
                 return
             }
         });
     }
 }
 
-// Initialize app
+// Create HTML file with profiles based on user inputs
+const createHTMLFile = (profileCards) => {
+    const htmlPageContent = generateHTML(profileCards);
+    
+    fs.writeFile('./dist/index.html', htmlPageContent, (err) => err ? console.log(err) : console.log('Successfully created index.html!'))
+}
+
+// Initialise app
 const init = () => {
     welcome();
     collectPeopleData();
-
-    // const htmlPageContent = generateHTML(profileCards);
-
-    // console.log(htmlPageContent);
-    // .then((profileCards) => fs.writeFileSync('./dist/index.html', generateHTML(profileCards)))
-    // .then(() => console.log('Successfully created index.html!'))
-    // .catch((err) => console.error(err));
 }
 
 init();
