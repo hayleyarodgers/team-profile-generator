@@ -10,7 +10,7 @@ const welcome = () => {
     Please build your team.`);
 }
 
-const addManager = () => {
+const addManagerData = () => {
     return inquirer.prompt([
         {
             type: 'input',
@@ -47,16 +47,16 @@ const decideAddMember = () => {
     ])
     .then((data) => {
         if (data.choices === 'Engineer') {
-            addEngineer();
+            addEngineerData();
         } else if (data.choices === 'Intern') {
-            addIntern();
+            addInternData();
         } else {
             return
         }
     });
 }
 
-const addEngineer = () => {
+const addEngineerData = () => {
     return inquirer.prompt([
         {
             type: 'input',
@@ -76,7 +76,7 @@ const addEngineer = () => {
     ]);
 }
 
-const addIntern = () => {
+const addInternData = () => {
     return inquirer.prompt([
         {
             type: 'input',
@@ -99,7 +99,7 @@ const addIntern = () => {
 // Initialize app
 const init = () => {
     welcome();
-    addManager();
+    addManagerData();
     decideAddMember()
     .then((data) => fs.writeFileSync('./dist/index.html', generateHTML(data)))
     .then(() => console.log('Successfully created index.html!'))
