@@ -53,7 +53,7 @@ To use the application:
 To run tests, run the following command:
 
 ```
-npm run tests
+npm run test
 ```
 
 ## Credits
