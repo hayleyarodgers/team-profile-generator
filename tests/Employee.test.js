@@ -3,7 +3,7 @@ const Employee = require('../lib/Employee');
 describe('Employee', () => {
     describe('Initialisation', () => {
         // Positive tests
-        it("should create a new object with a 'name' property set to the 'name' argument provided when called with the 'new' keyword", () => {
+        it("should create a new object with a 'name' property set to the 'name' argument provided when called with the 'new' keyword.", () => {
             // Arrange
             const name = "Dua Lipa";
 
@@ -14,7 +14,7 @@ describe('Employee', () => {
             expect(obj.name).toEqual(name);
         });
 
-        it("should create a new object with an 'id' property set to the 'id' argument provided when called with the 'new' keyword", () => {
+        it("should create a new object with an 'id' property set to the 'id' argument provided when called with the 'new' keyword.", () => {
             // Arrange
             const id = 1;
 
@@ -25,7 +25,7 @@ describe('Employee', () => {
             expect(obj.id).toEqual(id);
         });
 
-        it("should create a new object with an 'email' property set to the 'email' argument provided when called with the 'new' keyword", () => {
+        it("should create a new object with an 'email' property set to the 'email' argument provided when called with the 'new' keyword.", () => {
             // Arrange
             const email = "dualipa@gmail.com";
 
@@ -37,7 +37,7 @@ describe('Employee', () => {
         });
 
         // Exception tests
-        it("should throw an error if not provided with any values", () => {
+        it("should throw an error if not provided with any values.", () => {
             // Arrange
             const cb = () => new Employee();
       
@@ -48,7 +48,7 @@ describe('Employee', () => {
         it("should throw an error if 'name' is not a string", () => {
             // Arrange
             const cb = () => new Employee(3,1,"dualipa@gmail.com");
-            const err = new Error("Expected parameter 'name' to be a non-empty string");
+            const err = new Error("Expected parameter 'name' to be a non-empty string.");
       
             // Assert
             expect(cb).toThrowError(err);
@@ -57,7 +57,7 @@ describe('Employee', () => {
         it("should throw an error if 'id' is not a number", () => {
             // Arrange
             const cb = () => new Employee("Dua Lipa","1","dualipa@gmail.com");
-            const err = new Error("Expected parameter 'age' to be a number");
+            const err = new Error("Expected parameter 'age' to be a number.");
       
             // Assert
             expect(cb).toThrowError(err);
@@ -66,7 +66,7 @@ describe('Employee', () => {
         it("should throw an error if 'email' is not a string", () => {
             // Arrange
             const cb = () => new Employee("Dua Lipa","1",3);
-            const err = new Error("Expected parameter 'email' to be a non-empty string");
+            const err = new Error("Expected parameter 'email' to be a non-empty string.");
       
             // Assert
             expect(cb).toThrowError(err);
@@ -75,7 +75,7 @@ describe('Employee', () => {
         it("should throw an error if 'id' is less than 0", () => {
             // Arrange
             const cb = () => new Employee("Dua Lipa",-1,"dualipa@gmail.com");
-            const err = new Error("Expected parameter 'age' to be a non-negative number");
+            const err = new Error("Expected parameter 'age' to be a non-negative number.");
       
             // Assert
             expect(cb).toThrowError(err);
@@ -84,7 +84,7 @@ describe('Employee', () => {
         it("should throw an error if 'email' is in an invalid format", () => {
             // Arrange
             const cb = () => new Employee("Dua Lipa",-1,"Dua Lipa");
-            const err = new Error("Expected parameter 'email' to be in email format");
+            const err = new Error("Expected parameter 'email' to be a valid email address.");
       
             // Assert
             expect(cb).toThrowError(err);
@@ -92,7 +92,7 @@ describe('Employee', () => {
     });
 
     describe('getName', () => {
-        it("should return the name of a new 'Employee' object", () => {
+        it("should return the name of a new 'Employee' object.", () => {
             // Arrange
             const name = "Dua Lipa";
 
@@ -105,7 +105,7 @@ describe('Employee', () => {
     });
 
     describe('getId', () => {
-        it("should return the id of a new 'Employee' object", () => {
+        it("should return the id of a new 'Employee' object.", () => {
             // Arrange
             const id = 1;
 
@@ -118,7 +118,7 @@ describe('Employee', () => {
     });
 
     describe('getEmail', () => {
-        it("should return the email of a new 'Employee' object", () => {
+        it("should return the email of a new 'Employee' object.", () => {
             // Arrange
             const email = "dualipa@gmail.com";
 
@@ -131,7 +131,7 @@ describe('Employee', () => {
     });
 
     describe('getRole', () => {
-        it("should return 'Employee' as the role of a new 'Employee' object", () => {
+        it("should return 'Employee' as the role of a new 'Employee' object.", () => {
             // Arrange
             const role = "Employee";
 
