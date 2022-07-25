@@ -29,7 +29,7 @@ function generateHTML(profileCards) {
             uniqueListItem = `Office number: ${card.officeNumber}`;
         } else if (card.role === 'Engineer') {
             icon = '🛠';
-            uniqueListItem = `GitHub: <a href="${card.github}" target="_blank" rel="noopener noreferrer">${card.github}</a>`;
+            uniqueListItem = `GitHub: <a href="https://github.com/${card.github}" target="_blank" rel="noopener noreferrer">${card.github}</a>`;
         } else {
             icon = '📚';
             uniqueListItem = `School: ${card.school}`;
