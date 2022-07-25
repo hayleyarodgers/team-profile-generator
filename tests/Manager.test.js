@@ -5,20 +5,29 @@ describe('Manager', () => {
         // Positive tests
         it("should create a new object with an 'officeNumber' property set to the 'officeNumber' argument provided when called with the 'new' keyword.", () => {
             // Arrange
+            const name = "Dua Lipa";
+            const id = 1;
+            const email = "dualipa@gmail.com";
             const officeNumber = 1;
 
             // Act
-            const obj = new Manager(officeNumber);
+            const obj = new Manager(name, id, email, officeNumber);
 
             // Assert
             expect(obj.officeNumber).toEqual(officeNumber);
         });
 
         // Exception tests
-        it("should throw an error if 'officeNumber' is not a number", () => {
+        it("should throw an error if 'officeNumber' is not a non-negative number", () => {
             // Arrange
-            const cb = () => new Manager("Dua Lipa",1,"dualipa@gmail.com","1");
-            const err = new Error("Expected parameter 'officeNumber' to be a number.");
+            const name = "Dua Lipa";
+            const id = 1;
+            const email = "dualipa@gmail.com";
+            const officeNumber = "1";
+
+            // Act
+            const cb = () => new Manager(name, id, email, officeNumber);
+            const err = new Error("Expected parameter 'officeNumber' to be a non-negative number.");
       
             // Assert
             expect(cb).toThrowError(err);
@@ -28,10 +37,13 @@ describe('Manager', () => {
     describe('getOfficeNumber', () => {
         it("should return the office number of a new 'Manager' object.", () => {
             // Arrange
+            const name = "Dua Lipa";
+            const id = 1;
+            const email = "dualipa@gmail.com";
             const officeNumber = 1;
 
             // Act
-            const result = new Manager().getOfficeNumber(officeNumber);
+            const result = new Manager(name, id, email, officeNumber).getOfficeNumber(officeNumber);
 
             // Assert
             expect(result).toEqual(officeNumber);
@@ -41,10 +53,14 @@ describe('Manager', () => {
     describe('getRole', () => {
         it("should return 'Manager' as the role of a new 'Manager' object.", () => {
             // Arrange
+            const name = "Dua Lipa";
+            const id = 1;
+            const email = "dualipa@gmail.com";
+            const officeNumber = 1;
             const role = "Manager";
 
             // Act
-            const result = new Manager().getRole(role);
+            const result = new Manager(name, id, email, officeNumber).getRole(role);
 
             // Assert
             expect(result).toEqual(role);

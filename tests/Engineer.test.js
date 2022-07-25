@@ -5,10 +5,13 @@ describe('Engineer', () => {
         // Positive tests
         it("should create a new object with a 'github' property set to the 'github' argument provided when called with the 'new' keyword.", () => {
             // Arrange
+            const name = "Dua Lipa";
+            const id = 1;
+            const email = "dualipa@gmail.com";
             const github = "dualipa";
 
             // Act
-            const obj = new Engineer(github);
+            const obj = new Engineer(name, id, email, github);
 
             // Assert
             expect(obj.github).toEqual(github);
@@ -17,7 +20,13 @@ describe('Engineer', () => {
         // Exception tests
         it("should throw an error if 'github' is not a string", () => {
             // Arrange
-            const cb = () => new Engineer("Dua Lipa",1,"dualipa@gmail.com",1);
+            const name = "Dua Lipa";
+            const id = 1;
+            const email = "dualipa@gmail.com";
+            const github = 1;
+
+            // Act
+            const cb = () => new Engineer(name, id, email, github);
             const err = new Error("Expected parameter 'github' to be a non-empty string.");
       
             // Assert
@@ -28,10 +37,13 @@ describe('Engineer', () => {
     describe('getGithub', () => {
         it("should return the github username of a new 'Engineer' object.", () => {
             // Arrange
+            const name = "Dua Lipa";
+            const id = 1;
+            const email = "dualipa@gmail.com";
             const github = "dualipa";
 
             // Act
-            const result = new Engineer().getGithub(github);
+            const result = new Engineer(name, id, email, github).getGithub(github);
 
             // Assert
             expect(result).toEqual(github);
@@ -41,10 +53,14 @@ describe('Engineer', () => {
     describe('getRole', () => {
         it("should return 'Engineer' as the role of a new 'Engineer' object.", () => {
             // Arrange
+            const name = "Dua Lipa";
+            const id = 1;
+            const email = "dualipa@gmail.com";
+            const github = "dualipa";
             const role = "Engineer";
 
             // Act
-            const result = new Engineer().getRole(role);
+            const result = new Engineer(name, id, email, github).getRole(role);
 
             // Assert
             expect(result).toEqual(role);
