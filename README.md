@@ -7,7 +7,7 @@
 * [Installation](#installation)
 * [Usage](#usage) 
 * [Tests](#tests)
-* [Questions](#questions)
+* [Credits](#credits)
 
 ## Description
 
@@ -46,7 +46,15 @@ npm i
 To use the application:
 1. Open the repository in your terminal or bash.
 2. In the command-line, enter ```node index.js```
-3. In the command-line, answer the prompts. 
+3. In the command-line, answer the prompts.
+
+## Tests
+
+To run tests, run the following command:
+
+```
+npm run tests
+```
 
 ## Credits
 
