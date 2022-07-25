@@ -12,8 +12,7 @@ const profileCards = [];
 const welcome = () => {
     console.log(`
 
-Welcome to the team generator!
-Use \`npm run reset\` to reset the dist/ folder.
+Welcome to the team generator! ✨
     
 Please build your team.`);
 }
