@@ -136,7 +136,7 @@ describe('Employee', () => {
             const role = "Employee";
 
             // Act
-            const result = new Employee().getRole(Employee);
+            const result = new Employee().getRole(role);
 
             // Assert
             expect(result).toEqual(role);
