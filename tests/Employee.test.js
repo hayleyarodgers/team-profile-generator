@@ -57,7 +57,7 @@ describe('Employee', () => {
         it("should throw an error if 'id' is not a number", () => {
             // Arrange
             const cb = () => new Employee("Dua Lipa","1","dualipa@gmail.com");
-            const err = new Error("Expected parameter 'age' to be a number.");
+            const err = new Error("Expected parameter 'id' to be a number.");
       
             // Assert
             expect(cb).toThrowError(err);
