@@ -65,7 +65,7 @@ describe('Employee', () => {
 
         it("should throw an error if 'email' is not a string", () => {
             // Arrange
-            const cb = () => new Employee("Dua Lipa","1",3);
+            const cb = () => new Employee("Dua Lipa",1,3);
             const err = new Error("Expected parameter 'email' to be a non-empty string.");
       
             // Assert
@@ -83,7 +83,7 @@ describe('Employee', () => {
 
         it("should throw an error if 'email' is in an invalid format", () => {
             // Arrange
-            const cb = () => new Employee("Dua Lipa",-1,"Dua Lipa");
+            const cb = () => new Employee("Dua Lipa",1,"Dua Lipa");
             const err = new Error("Expected parameter 'email' to be a valid email address.");
       
             // Assert
